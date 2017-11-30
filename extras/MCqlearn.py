@@ -103,7 +103,8 @@ if __name__ == "__main__":
             inputs, targets = exp_replay.get_batch(model, batch_size=batch_size)
 
             loss += model.train_on_batch(inputs, targets) #[0]
-            print("Step {} Epoch {:03d}/999 | Loss {:.4f} | Win count {} | Pos {:.3f} | Act {}".format(step, e, loss, win_cnt, input_t[0,0],action-1))
+            print("Step {} Epoch {:03d}/999 | Loss {:.4f} | Win count {} | Pos {:.3f} | Act {}".
+                  format(step, e, loss, win_cnt, input_t[0,0],action-1))
 
     # Save trained model weights and architecture, this will be used by the visualization code
     model.save_weights("model.h5", overwrite=True)
